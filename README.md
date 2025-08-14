@@ -1,0 +1,68 @@
+<div align="center">
+
+# AI Pothole Detection for Road Safety
+
+**A Python application to identify and track road potholes from a video feed using a custom-trained YOLOv8 model.**
+
+</div>
+
+---
+
+### **✨ Key Features**
+- **Real-Time Analysis:** Processes video streams to find potholes.
+- **High Accuracy:** Uses a fine-tuned YOLOv8 model for reliable detection.
+- **Video Output:** Generates a new video file with bounding boxes drawn around detections.
+- **Extensible:** Can be trained to detect other road hazards like cracks or debris.
+
+---
+
+### **🛠️ Tech Stack**
+
+| Technology | Purpose |
+| :--- | :--- |
+| **Python** | Core programming language |
+| **YOLOv8** | Object detection and model training |
+| **OpenCV** | Video reading, processing, and writing |
+| **PyTorch**| Deep learning framework backend |
+
+---
+
+### **🚀 Quick Start Guide**
+
+Follow these steps to get the project up and running.
+
+**1. Set Up Your Environment**
+```bash
+# Clone this repository
+git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
+cd your-repository-name
+
+# Install the required packages
+pip install -r requirements.txt
+
+(Note: Make sure to create a requirements.txt file with ultralytics, opencv-python, etc.)
+
+2. Train the AI Model
+You must train the model on a labelled dataset first.
+
+# Start training using your data.yaml file
+yolo task=detect mode=train model=yolov8n.pt data=data.yaml epochs=50 imgsz=640
+
+This process will generate your custom model (best.pt) inside the runs/ directory.
+
+3. Run the Detector
+Execute the main script with your trained model and a video file.
+
+python main.py --model "runs/detect/train/weights/best.pt" --video "path/to/your/video.mp4"
+
+The final processed video will be saved as output_video.mp4.
+
+**📁 Project Directory**
+.
+├── runs/
+│   └── detect/
+│       └── train/
+│           └── weights/
+│               └── best.pt   <-- Your trained model
+├── main.py                   <-- The main script to run detection
+├── data.yaml                 <-- Your
