@@ -56,9 +56,9 @@ Execute the main script with your trained model and a video file.
 python main.py --model "runs/detect/train/weights/best.pt" --video "path/to/your/video.mp4"
 
 The final processed video will be saved as output_video.mp4.
+```
 
-**📁 Project Directory**
-.
+📁 Project Directory
 ├── runs/
 │   └── detect/
 │       └── train/
